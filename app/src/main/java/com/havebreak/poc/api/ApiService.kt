@@ -1,12 +1,10 @@
 package com.havebreak.poc.api
 
 import com.havebreak.poc.model.Login
+import com.havebreak.poc.model.Ticket
+import com.havebreak.poc.model.TicketData
 import retrofit2.Call
-import retrofit2.Response
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.Headers
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -21,5 +19,13 @@ interface ApiService {
     @Headers("App-Token: 3N9cWoE2bfWagGLQonEZHY1kPtHRCqOrRG61HnpS")
     fun finishSession(
         @Header("Session-Token") sessionToken: String
+    ): Call<Unit>
+
+    @POST("Ticket")
+    @Headers("App-Token: 3N9cWoE2bfWagGLQonEZHY1kPtHRCqOrRG61HnpS")
+    fun createTicket(
+        //@Query("session-token") sessionToken: String,
+        @Header("Session-Token") sessionToken: String,
+        @Body ticket: Ticket
     ): Call<Unit>
 }

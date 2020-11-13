@@ -1,5 +1,6 @@
 package com.havebreak.poc
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.havebreak.poc.api.Api
@@ -36,6 +37,17 @@ class MenuActivity : AppCompatActivity() {
                     }
                 })
             }
+        }
+
+        openTicketButton.setOnClickListener {
+            Intent(this, OpenTicketActivity::class.java).apply {
+                putExtra("session_token", sessionToken)
+                startActivity(this)
+            }
+        }
+
+        followTicketButton.setOnClickListener {
+            startActivity(Intent(this, FollowTicketActivity::class.java))
         }
     }
 }
