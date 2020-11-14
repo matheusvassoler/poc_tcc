@@ -47,7 +47,10 @@ class MenuActivity : AppCompatActivity() {
         }
 
         followTicketButton.setOnClickListener {
-            startActivity(Intent(this, FollowTicketActivity::class.java))
+            Intent(this, FollowTicketActivity::class.java).apply {
+                putExtra("session_token", sessionToken)
+                startActivity(this)
+            }
         }
     }
 }
