@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="#E4EFE4">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/attendantMessageGuideline"
@@ -14,10 +13,10 @@
         app:layout_constraintGuide_percent="0.8" />
 
     <TextView
-        android:id="@+id/userMessageTextView"
+        android:id="@+id/attendantMessageTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Ola "
+        tools:text="Ola jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj"
         android:background="#FFFFFF"
         android:padding="5dp"
         app:layout_constrainedWidth="true"

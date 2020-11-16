@@ -1,9 +1,6 @@
 package com.havebreak.poc.api
 
-import com.havebreak.poc.model.Login
-import com.havebreak.poc.model.Ticket
-import com.havebreak.poc.model.TicketData
-import com.havebreak.poc.model.TicketFollowup
+import com.havebreak.poc.model.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -36,4 +33,18 @@ interface ApiService {
         @Path("ticketId") ticketId: String,
         @Query("session_token") sessionToken: String
     ): Call<List<TicketFollowup>>
+
+    @GET("Ticket/{ticketId}/ITILSolution")
+    @Headers("App-Token: 3N9cWoE2bfWagGLQonEZHY1kPtHRCqOrRG61HnpS")
+    fun getTicketSupportSolution(
+        @Path("ticketId") ticketId: String,
+        @Query("session_token") sessionToken: String
+    ): Call<List<TicketSupportSolution>>
+
+    @GET("Ticket/{ticketId}")
+    @Headers("App-Token: 3N9cWoE2bfWagGLQonEZHY1kPtHRCqOrRG61HnpS")
+    fun getTicket(
+        @Path("ticketId") ticketId: String,
+        @Query("session_token") sessionToken: String
+    ): Call<TicketData>
 }
